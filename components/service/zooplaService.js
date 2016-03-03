@@ -1,12 +1,12 @@
 (() => {
-    angular.module('houses.data', [])
+    angular.module('houses.data')
     .factory('zoopla', function($http, $q) {
         function getZoopla(_url, _data) {
             var data = {
                     api_key: "gndny3sqrvsgx483wpamyqe4",
                     callback: "JSON_CALLBACK"
                 },
-                url = "/api/v1/";
+                url = "/api/";
 
             angular.extend(data, _data);
 
@@ -31,7 +31,7 @@
 
         function getListing(_data) {
             return getZoopla("property_listings", {
-                postcode: 'se18',
+                postcode: 'sw4',
                 area: 'London',
                 listing_status: 'rent',
                 minimum_price: 50,

@@ -1,6 +1,14 @@
 "use strict";
 
 module.exports = function(grunt) {
+    const _port = grunt.option('port'),
+        _jsInput = [
+            'shared/declarations.js',
+            'components/**/*.js',
+            'shared/**/*.js'
+        ];
+
+
     // Project configuration.
     grunt.initConfig({
 
@@ -31,17 +39,16 @@ module.exports = function(grunt) {
         // Grunt-contrib-watch
         watch: {
             sass: {
-                files: ['scss/**/*.scss'],
+                files: ['./**/*.scss'],
                 tasks: [
                     'sass:dev'
                 ]
             },
             js: {
-                files: ['js/**/*.js'],
+                files: _jsInput,
                 tasks: [
                     'concat:dev',
-                    'babel:dev',
-                    'uglify:dev'
+                    'babel:dev'
                 ]
             },
             options: {
@@ -49,19 +56,30 @@ module.exports = function(grunt) {
                 spawn: false
             }
         },
-        connect: {
+        express: {
+            options: {
+                background: true
+            },
             dev: {
                 options: {
-                    port: process.env.PORT || 8080
+                    script: 'server.js'
+                }
+            }
+        },
+        concat: {
+            dev: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'dist/app.min.js': _jsInput,
                 }
             },
             build: {
-                options: {
-                    port: process.env.PORT || 8080,
-                    keepalive: true,
-                    open: true
+                files: {
+                    'dist/app.min.js': _jsInput,
                 }
-            }
+            },
         },
         babel: {
             dev: {
@@ -80,21 +98,6 @@ module.exports = function(grunt) {
                     'dist/app.min.js': ['dist/app.min.js']
                 }
             }
-        },
-        concat: {
-            dev: {
-                options: {
-                  sourceMap: true  
-                },
-                files: {
-                    'dist/app.min.js': ['js/**/*.js'],
-                }
-            },
-            build: {
-                files: {
-                    'dist/app.min.js': ['js/**/*.js'],
-                }
-            },
         },
         uglify: {
             options: {
@@ -135,16 +138,16 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('deploy', [
         'build',
-        'connect:build'
+        'express:build'
     ]);
     grunt.registerTask('dev', [
-        'connect:dev',
+        'express:dev',
         'concat',
-        'babel:dev',
+        // 'babel:dev',
         'sass:dev',
         'watch'
     ]);
-    
+
     grunt.registerTask('default', [
         'dev'
     ]);
