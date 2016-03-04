@@ -51,18 +51,24 @@ module.exports = function(grunt) {
                     'babel:dev'
                 ]
             },
+            express: {
+              files:  [ '**/*.js' ],
+              tasks:  [ 'express:dev' ]
+            },
             options: {
-                livereload: true,
                 spawn: false
             }
         },
         express: {
-            options: {
-                background: true
-            },
             dev: {
                 options: {
                     script: 'server.js'
+                }
+            },
+            build: {
+                options: {
+                    script: 'server.js',
+                    background: false
                 }
             }
         },
@@ -133,7 +139,7 @@ module.exports = function(grunt) {
     // ...
     grunt.registerTask('build', [
         'sass:build',
-        'concat',
+        'concat:build',
         'babel:build'
     ]);
     grunt.registerTask('deploy', [
@@ -142,8 +148,8 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('dev', [
         'express:dev',
-        'concat',
-        // 'babel:dev',
+        'concat:dev',
+        'babel:dev',
         'sass:dev',
         'watch'
     ]);
