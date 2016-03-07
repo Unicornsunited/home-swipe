@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     const _port = grunt.option('port'),
         _jsInput = [
             'shared/declarations.js',
-            'components/**/*.js',
-            'shared/**/*.js'
+            'shared/**/*.js',
+            'patterns/**/*.js'
         ];
 
 

@@ -1,7 +1,7 @@
 (() => {
     angular.module('houses.data')
-    .factory('zoopla', function($http, $q) {
-        function getZoopla(_url, _data) {
+    .factory('property', function($http, $q) {
+        function getProperty(_url, _data) {
             var data = {
                     api_key: "gndny3sqrvsgx483wpamyqe4",
                     callback: "JSON_CALLBACK"
@@ -30,7 +30,7 @@
         }
 
         function getListing(_data) {
-            return getZoopla("property_listings", {
+            return getProperty("property_listings", {
                 postcode: 'sw4',
                 area: 'London',
                 listing_status: 'rent',
@@ -42,7 +42,7 @@
         }
 
         function getHouse(id) {
-            return getZoopla("property_listings", {
+            return getProperty("property_listings", {
                 listing_id: id
             });
         }

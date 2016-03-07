@@ -6,6 +6,6 @@
 	    	</legend>
 	    </div>
 	</div>
-	<button class="swipe-button button-fab color-love" ng-click="sortCard('love')" ng-include="$root.url.icons + 'fav.svg'"></button>
-	<button class="swipe-button button-fab color-discard" ng-click="sortCard('discard')" ng-include="$root.url.icons + 'delete.svg'"></button>
+	<button class="swipe-button button-fab color-love" ng-click="moveCardToList(cards[0].listing_id, 'love')" ng-include="$root.url.icons + 'fav.svg'"></button>
+	<button class="swipe-button button-fab color-discard" ng-click="moveCardToList(cards[0].listing_id, 'discard')" ng-include="$root.url.icons + 'delete.svg'"></button>
 </div>

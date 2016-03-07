@@ -1,4 +1,5 @@
 .button-fab {
+    cursor: pointer;
     @include vendorize(border-radius, 100%);
     width: $button-fab-size;
     height: $button-fab-size;

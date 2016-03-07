@@ -26,7 +26,7 @@
                 abstract: true,
                 views: {
                     // top: {
-                    //     templateUrl: "components/top/top.html",
+                    //     templateUrl: "patterns/organisms/top/top.html",
                     //     // controller: "topCtrl"
                     // }
                 }
@@ -34,13 +34,13 @@
             .state('base.dating', {
                 url: "/",
                 resolve: {
-                    data: (zoopla) => {
-                        return zoopla.getListing();
+                    data: property => {
+                        return property.getListing();
                     }
                 },
                 views: {
                     'mainContent@': {
-                        templateUrl: "components/dating/dating.html",
+                        templateUrl: "patterns/organisms/dating/dating.html",
                         controller: "datingCtrl"
                     }
                 }
