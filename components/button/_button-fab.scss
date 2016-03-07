@@ -1,0 +1,14 @@
+.button-fab {
+    @include vendorize(border-radius, 100%);
+    width: $button-fab-size;
+    height: $button-fab-size;
+    background-color: #fff;
+    border: .4rem solid $color-neutral-light;
+    &.color-love {
+        fill: $color-love;
+        right: 0;
+    }
+    &.color-discard {
+        fill: $color-discard;
+    }
+}

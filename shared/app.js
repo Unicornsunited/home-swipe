@@ -9,6 +9,9 @@
             base: "/api",
             user: "/user"
         };
+        $rootScope.url = {
+            icons: "src/icons/"
+        };
 
         $document.on('click', function() {
             $rootScope.$broadcast('bodyClick');
@@ -22,10 +25,10 @@
             .state('base', {
                 abstract: true,
                 views: {
-                    top: {
-                        templateUrl: "components/top/top.html",
-                        // controller: "topCtrl"
-                    }
+                    // top: {
+                    //     templateUrl: "components/top/top.html",
+                    //     // controller: "topCtrl"
+                    // }
                 }
             })
             .state('base.dating', {
@@ -36,7 +39,7 @@
                     }
                 },
                 views: {
-                    mainContent: {
+                    'mainContent@': {
                         templateUrl: "components/dating/dating.html",
                         controller: "datingCtrl"
                     }

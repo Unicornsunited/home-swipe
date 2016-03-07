@@ -1,0 +1,8 @@
+@mixin vendorize($property, $value...) {
+	$vendors: $default-vendors;
+	@each $v in $vendors {
+		$selector: -#{$v}-#{$property};
+		#{$selector}: #{$value};
+	}
+	#{$property}: #{$value};
+}

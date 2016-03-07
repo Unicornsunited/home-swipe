@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         // Grunt-contrib-watch
         watch: {
             sass: {
-                files: ['./**/*.scss'],
+                files: ['**/*.scss'],
                 tasks: [
                     'sass:dev'
                 ]
@@ -50,10 +50,6 @@ module.exports = function(grunt) {
                     'concat:dev',
                     'babel:dev'
                 ]
-            },
-            express: {
-              files:  [ '**/*.js' ],
-              tasks:  [ 'express:dev' ]
             },
             options: {
                 spawn: false

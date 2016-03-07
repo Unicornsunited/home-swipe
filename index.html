@@ -6,7 +6,6 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		
 		<link rel="stylesheet" type="text/css" href="dist/app.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.0.2/css/material-design-iconic-font.min.css">
 	</head>
 	<body ng-app="house-dating">
 		<nav ui-view="top" class="top-container"></nav>
@@ -16,5 +15,10 @@
 		<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 		
 		<script src="dist/app.min.js"></script>
+		
+		<!--[if IE]>
+			<script src="node_modules/svg4everybody/dist/svg4everybody.min.js"></script>
+			<script>svg4everybody();</script>
+		<![endif]-->
 	</body>
 </html>
