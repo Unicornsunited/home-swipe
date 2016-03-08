@@ -1,0 +1,9 @@
+include /patterns/atoms/button/_button-fab.jade
+
+div(class='swipe-container')
+	div(class='card stack', ng-repeat='card in cards track by card.listing_id')
+		div(class='card-header', style!='background-image:url(\'{{card.image_url}}\')')
+			legend(class='card-header-legend')
+				hi(class='card-header-legend-title') {{card.street_name}}
+	+button-fab('love', "moveCardToList(cards[0].listing_id, 'love')", "$root.url.icons + 'love.svg'")
+	+button-fab('discard', "moveCardToList(cards[0].listing_id, 'discard')", "$root.url.icons + 'discard.svg'")

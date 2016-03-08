@@ -40,7 +40,7 @@
                 },
                 views: {
                     'mainContent@': {
-                        templateUrl: "patterns/organisms/dating/dating.html",
+                        templateUrl: "dist/patterns/organisms/dating/dating.html",
                         controller: "datingCtrl"
                     }
                 }

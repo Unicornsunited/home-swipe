@@ -51,6 +51,12 @@ module.exports = function(grunt) {
                     'babel:dev'
                 ]
             },
+            jade: {
+                files: "**/*.jade",
+                tasks: [
+                    'jade:dev'
+                ]
+            },
             options: {
                 spawn: false
             }
@@ -101,6 +107,43 @@ module.exports = function(grunt) {
                 }
             }
         },
+        jade: {
+            dev: {
+                options: {
+                    basedir: ".",
+                    data: {
+                        debug: true,
+                        timestamp: "<%= new Date().getTime() %>"
+                    }
+                },
+                files: [{
+                    src: [
+                        "**/*.jade",
+                        "!**/_*.jade"
+                    ],
+                    dest: "dist",
+                    expand: true,
+                    ext: ".html"
+                }]
+            },
+            build: {
+                options: {
+                    basedir: ".",
+                    data: {
+                        debug: false
+                    }
+                },
+                files: [{
+                    src: [
+                        "**/*.jade",
+                        "!**/_*.jade"
+                    ],
+                    dest: "dist",
+                    expand: true,
+                    ext: ".html"
+                }]
+            }
+        },
         uglify: {
             options: {
                 mangle: false,
@@ -136,7 +179,8 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'sass:build',
         'concat:build',
-        'babel:build'
+        'babel:build',
+        'jade:build'
     ]);
     grunt.registerTask('deploy', [
         'build',
@@ -147,6 +191,7 @@ module.exports = function(grunt) {
         'concat:dev',
         'babel:dev',
         'sass:dev',
+        'jade:dev',
         'watch'
     ]);
 
