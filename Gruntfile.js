@@ -121,7 +121,8 @@ module.exports = function(grunt) {
                         "**/*.jade",
                         "!**/_*.jade"
                     ],
-                    dest: "dist",
+                    dest: "dist/templates",
+                    flatten: true,
                     expand: true,
                     ext: ".html"
                 }]
