@@ -1,9 +1,14 @@
 $color-pink-500: #E91E63;
+$color-deep-orange-500: #FF5722;
 $color-brown-900: #3E2723;
 $color-amber-50: #FFF8E1;
 $color-grey-200: #EEE;
+$color-blue-500: #2196F3;
+
+$color-primary: $color-blue-500;
+$color-action: lighten($color-primary, 7);
 
 $color-base-background: $color-amber-50;
-$color-love: $color-pink-500;
+$color-love: $color-deep-orange-500;
 $color-discard: $color-brown-900;
 $color-neutral-light: $color-grey-200;

@@ -4,6 +4,10 @@
 
 @import "general/fonts";
 @import "general/layout";
+@import "general/forms";
 
+@import "patterns/atoms/search-input/search-input";
 @import "patterns/atoms/button/button-fab";
+
+@import "patterns/organisms/top/top";
 @import "patterns/organisms/dating/dating";

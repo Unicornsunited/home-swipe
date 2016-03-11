@@ -1,0 +1,4 @@
+mixin search-input(ngModel)
+	div(class="search-container")
+		input(type="search", ng-model=ngModel, class="search-input")
+		button(type="submit", class="search-submit", ng-include="$root.url.icons + 'search.svg'")

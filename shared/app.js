@@ -25,10 +25,10 @@
             .state('base', {
                 abstract: true,
                 views: {
-                    // top: {
-                    //     templateUrl: "patterns/organisms/top/top.html",
-                    //     // controller: "topCtrl"
-                    // }
+                    top: {
+                        templateUrl: "dist/templates/top.html",
+                        // controller: "topCtrl"
+                    }
                 }
             })
             .state('base.dating', {

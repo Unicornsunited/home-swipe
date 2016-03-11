@@ -43,6 +43,24 @@ h5 {
 h6 {
   font-size: 0.75rem; }
 
+input {
+  background-color: #fff;
+  border: 1px solid #EEE;
+  padding: .4em .6em; }
+
+.search-container {
+  position: relative; }
+  .search-container .search-input {
+    padding-right: 1.5rem; }
+  .search-container .search-submit {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    fill: #43a6f5; }
+
 .button-fab {
   cursor: pointer;
   -webkit-border-radius: 100%;
@@ -54,10 +72,15 @@ h6 {
   background-color: #fff;
   border: 0.4rem solid #EEE; }
   .button-fab.color-love {
-    fill: #E91E63;
+    fill: #FF5722;
     right: 0; }
   .button-fab.color-discard {
     fill: #3E2723; }
+
+.top-container-inner {
+  list-style: none;
+  margin: 0;
+  padding: .4em .6em; }
 
 .swipe-container {
   width: 100%;
@@ -81,26 +104,6 @@ h6 {
   -ms-box-shadow: 0 2px 4px rgba(17, 17, 17, 0.4);
   box-shadow: 0 2px 4px rgba(17, 17, 17, 0.4);
   background-color: #fff; }
-  .card .card-header {
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    padding-top: 60%; }
-    .card .card-header .card-header-legend {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1em .6em .4em;
-      color: #fff;
-      -webkit-text-shadow: 0 1px 0 #111;
-      -moz-text-shadow: 0 1px 0 #111;
-      -ms-text-shadow: 0 1px 0 #111;
-      text-shadow: 0 1px 0 #111;
-      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }
   .card.stack {
     position: absolute;
     top: 0;

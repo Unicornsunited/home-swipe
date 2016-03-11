@@ -1,0 +1,17 @@
+.search-container {
+	position: relative;
+
+	.search-input {
+		padding-right: 1.5rem;
+	}
+
+	.search-submit {
+		border: 0;
+		background: transparent;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		fill: $color-action;
+	}
+}
